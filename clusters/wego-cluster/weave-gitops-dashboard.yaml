@@ -38,7 +38,7 @@ spec:
       create: true
       passwordHash: $2a$10$.VK7goytSnd3R73.oFvh/e/ZtOH44dMQWTeMPYcXy5RHs1rjQ02Ti
       username: admin
-    rbac:
-      impersonationResourceNames: ["wego-admin", "wego-team-a-admin", "wego-readonly"]
-      impersonationResources: ["groups"]
+    # rbac:
+    #   impersonationResourceNames: ["wego-admin", "wego-team-a-admin", "wego-readonly"]
+    #   impersonationResources: ["groups"]
 
