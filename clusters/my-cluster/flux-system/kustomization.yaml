@@ -3,3 +3,17 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
+patches:
+  - target:
+      version: v1
+      kind: Service
+      name: notification-controller
+      namespace: flux-system
+    patch: |
+      apiVersion: v1
+      kind: Service
+      metadata:
+        name: notification-controller
+        namespace: flux-system
+      spec:
+        type: LoadBalancer
