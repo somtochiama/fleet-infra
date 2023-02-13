@@ -17,3 +17,4 @@ patches:
         namespace: flux-system
       spec:
         type: LoadBalancer
+  - path: patch.yaml
