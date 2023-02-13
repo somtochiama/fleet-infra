@@ -18,12 +18,12 @@ spec:
         app: sandbox
     spec:
       containers:
-        - name: sandbox
-          image: sandbox
-          args:
-            - sleep
-            - infinity
-          imagePullPolicy: IfNotPresent
+        - name: nginx
+          image: nginx
+          # args:
+          #   - sleep
+          #   - infinity
+          # imagePullPolicy: IfNotPresent
   updateStrategy:
     type: RollingUpdate
     rollingUpdate:
