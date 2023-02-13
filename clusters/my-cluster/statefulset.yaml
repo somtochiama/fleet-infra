@@ -6,7 +6,7 @@ metadata:
   labels:
     app: sandbox
 spec:
-  minReadySeconds: 10
+  minReadySeconds: 20
   serviceName: sandbox
   replicas: 2
   selector:
