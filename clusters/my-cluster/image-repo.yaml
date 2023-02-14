@@ -7,8 +7,8 @@ metadata:
 spec:
   image: gcr.io/dx-somtoxhi/podinfo
   interval: 5m0s
-  secretRef:
-    name: image-pull
+  # secretRef:
+  #   name: image-pull
 
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
