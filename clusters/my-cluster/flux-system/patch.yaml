@@ -30,3 +30,4 @@ spec:
         - --log-encoding=json
         - --enable-leader-election
         - --gcp-autologin-for-gcr
+        image: somma/image-reflector-controller:v1beta2-4346682
