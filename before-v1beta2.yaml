@@ -1,0 +1,63 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2023-02-14T12:44:32Z"
+  finalizers:
+  - finalizers.fluxcd.io
+  generation: 2
+  labels:
+    kustomize.toolkit.fluxcd.io/name: flux-system
+    kustomize.toolkit.fluxcd.io/namespace: flux-system
+  name: podinfo
+  namespace: flux-system
+  resourceVersion: "29079995"
+  uid: aa7e5a31-f189-4747-843b-1f7e966c49ec
+spec:
+  exclusionList:
+  - ^.*\.sig$
+  image: gcr.io/dx-somtoxhi/podinfo
+  interval: 5m0s
+  provider: generic
+status:
+  canonicalImageName: gcr.io/dx-somtoxhi/podinfo
+  conditions:
+  - lastTransitionTime: "2023-02-14T12:53:48Z"
+    message: successful scan, found 2 tags
+    reason: ReconciliationSucceeded
+    status: "True"
+    type: Ready
+  lastScanResult:
+    scanTime: "2023-02-14T13:23:48Z"
+    tagCount: 2
+  observedGeneration: 2
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  creationTimestamp: "2023-02-14T13:15:58Z"
+  finalizers:
+  - finalizers.fluxcd.io
+  generation: 1
+  labels:
+    kustomize.toolkit.fluxcd.io/name: flux-system
+    kustomize.toolkit.fluxcd.io/namespace: flux-system
+  name: podinfo-acr
+  namespace: flux-system
+  resourceVersion: "29081341"
+  uid: 0521dd05-db95-45ae-9999-cf158eebec13
+spec:
+  exclusionList:
+  - ^.*\.sig$
+  image: asia-southeast1-docker.pkg.dev/dx-somtoxhi/podinfo/podinfo:v6.0.1
+  interval: 5m0s
+  provider: generic
+  secretRef:
+    name: image-pull
+status:
+  conditions:
+  - lastTransitionTime: "2023-02-14T13:15:58Z"
+    message: .spec.image value should not contain a tag; remove ':v6.0.1'
+    reason: ImageURLInvalid
+    status: "False"
+    type: Ready
+  observedGeneration: 1

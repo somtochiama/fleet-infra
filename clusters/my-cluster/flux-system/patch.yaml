@@ -1,26 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app.kubernetes.io/component: image-reflector-controller
-    app.kubernetes.io/instance: flux-system
-    app.kubernetes.io/part-of: flux
-    app.kubernetes.io/version: v0.39.0
-    control-plane: controller
   name: image-reflector-controller
   namespace: flux-system
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: image-reflector-controller
   template:
-    metadata:
-      annotations:
-        prometheus.io/port: "8080"
-        prometheus.io/scrape: "true"
-      labels:
-        app: image-reflector-controller
     spec:
       containers:
       - args:
@@ -31,3 +15,16 @@ spec:
         - --enable-leader-election
         - --gcp-autologin-for-gcr
         image: somma/image-reflector-controller:v1beta2-4346682
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-reflector-controller
+  namespace: flux-system
+spec:
+  template:
+    spec:
+      containers:
+      - volumes:
+        - emptyDir: {}
+          name: data

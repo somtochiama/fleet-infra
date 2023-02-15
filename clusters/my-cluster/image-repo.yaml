@@ -1,5 +1,5 @@
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta1
+apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
 metadata:
   name: podinfo
@@ -7,11 +7,9 @@ metadata:
 spec:
   image: gcr.io/dx-somtoxhi/podinfo
   interval: 5m0s
-  # secretRef:
-  #   name: image-pull
 
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta1
+apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: podinfo
@@ -21,21 +19,20 @@ spec:
     name: podinfo
   policy:
     semver:
-      range: '>=6.0.0'
+      range: '>=7.0.0'
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta1
+apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
 metadata:
   name: podinfo-acr
   namespace: flux-system
 spec:
-  image: asia-southeast1-docker.pkg.dev/dx-somtoxhi/podinfo/podinfo:v6.0.1
+  image: asia-southeast1-docker.pkg.dev/dx-somtoxhi/podinfo/podinfo
   interval: 5m0s
-  secretRef:
-    name: image-pull
+  provider: gcp
 
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta1
+apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: podinfo-acr
