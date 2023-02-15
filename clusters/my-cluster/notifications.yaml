@@ -25,13 +25,13 @@ spec:
     #   name: '*'
     # - kind: Kustomization
     #   name: '*'
-    # - kind: HelmRelease
-    #   name: '*'
+    - kind: HelmRelease
+      name: '*'
     # - kind: HelmChart
     #   name: '*'
-    - kind: HelmRepository
-      name: '*'
-    - kind: ImageRepository
-      name: '*'
-    - kind: ImagePolicy
-      name: '*'
+    # - kind: HelmRepository
+    #   name: '*'
+    # - kind: ImageRepository
+    #   name: '*'
+    # - kind: ImagePolicy
+    #   name: '*'
