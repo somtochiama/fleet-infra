@@ -13,6 +13,7 @@ spec:
   - gcePersistentDisk
 
 ---
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: sc-pvc
