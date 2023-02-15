@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
+- pvc.yaml
 patches:
   - target:
       version: v1
@@ -17,7 +18,16 @@ patches:
         namespace: flux-system
       spec:
         type: LoadBalancer
-  - path: patch.yaml
+  - target:
+      version: v1
+      group: apps
+      kind: Deployment
+      name: image-reflector-controller
+      namespace: flux-system
+    patch: |-
+      - op: add
+        path: /spec/template/spec/containers/0/args/-
+        value: --gcp-autologin-for-gcr    
   - path: sc-patch.json
     target:
       kind: Deployment
