@@ -18,6 +18,7 @@ patches:
       spec:
         type: LoadBalancer
   - path: patch.yaml
+  - path: sc-patch.yaml
 images:
   - name: ghcr.io/fluxcd/kustomize-controller
     newName: somma/kustomize-controller

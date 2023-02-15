@@ -15,16 +15,3 @@ spec:
         - --enable-leader-election
         - --gcp-autologin-for-gcr
         image: somma/image-reflector-controller:v1beta2-4346682
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: image-reflector-controller
-  namespace: flux-system
-spec:
-  template:
-    spec:
-      containers:
-      - volumes:
-        - emptyDir: {}
-          name: data
