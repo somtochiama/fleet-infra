@@ -1,5 +1,5 @@
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageRepository
 metadata:
   name: podinfo
@@ -9,7 +9,7 @@ spec:
   interval: 5m0s
 
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
   name: podinfo
@@ -21,7 +21,7 @@ spec:
     semver:
       range: '>=7.0.0'
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageRepository
 metadata:
   name: podinfo-acr
@@ -32,7 +32,7 @@ spec:
   provider: gcp
 
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
   name: podinfo-acr
