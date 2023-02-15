@@ -7,6 +7,7 @@ spec:
     storage: 5Gi
   accessModes:
     - ReadWriteOnce
+  volumeMode: Filesystem
   persistentVolumeReclaimPolicy: Recycle
   storageClassName: slow
   mountOptions:
