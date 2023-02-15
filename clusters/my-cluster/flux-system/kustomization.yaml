@@ -28,11 +28,11 @@ patches:
       - op: add
         path: /spec/template/spec/containers/0/args/-
         value: --gcp-autologin-for-gcr    
-  # - path: sc-patch.json
-  #   target:
-  #     kind: Deployment
-  #     name: source-controller
-  #     namespace: flux-system
+  - path: sc-patch.json
+    target:
+      kind: Deployment
+      name: source-controller
+      namespace: flux-system
 images:
   - name: ghcr.io/fluxcd/kustomize-controller
     newName: somma/kustomize-controller
