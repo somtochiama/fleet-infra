@@ -7663,8 +7663,9 @@ spec:
       serviceAccountName: source-controller
       terminationGracePeriodSeconds: 10
       volumes:
-      - emptyDir: {}
-        name: data
+      - name: data
+        persistentVolumeClaim:
+          claimName: pvc-demo
       - emptyDir: {}
         name: tmp
 ---
