@@ -29,7 +29,7 @@ metadata:
 spec:
   image: asia-southeast1-docker.pkg.dev/dx-somtoxhi/podinfo/podinfo
   interval: 5m0s
-  provider: gcp
+  # provider: gcp
 
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
