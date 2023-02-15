@@ -18,7 +18,11 @@ patches:
       spec:
         type: LoadBalancer
   - path: patch.yaml
-  - path: sc-patch.yaml
+  - path: sc-patch.json
+    target:
+      kind: Deployment
+      name: source-controller
+      namespace: flux-system
 images:
   - name: ghcr.io/fluxcd/kustomize-controller
     newName: somma/kustomize-controller
