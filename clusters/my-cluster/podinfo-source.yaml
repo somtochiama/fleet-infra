@@ -5,7 +5,7 @@ metadata:
   name: podinfo
   namespace: flux-system
 spec:
-  interval: 1m
+  interval: 2m
   ref:
     branch: master
   url: https://github.com/stefanprodan/podinfo
