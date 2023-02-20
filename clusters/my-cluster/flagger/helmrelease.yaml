@@ -14,4 +14,8 @@ spec:
         name: flagger
       version: '*'
   interval: 1m0s
+  values:
+    resource:
+      limit:
+        memory: 1Gi
 
