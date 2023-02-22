@@ -11,7 +11,7 @@ spec:
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: flagger
+        name: flaggerr
         namespace: default
       version: '*'
   interval: 1m0s
