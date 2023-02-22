@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: flagger
-        namespace: default
+        namespace: flux-system
       version: '*'
   interval: 1m0s
   values:
