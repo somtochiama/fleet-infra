@@ -13,10 +13,9 @@ spec:
         kind: HelmRepository
         name: flaggerr
         namespace: default
-      version: '*'
+      version: '1.28.0'
   interval: 1m0s
   values:
     resource:
       limit:
         memory: 1Gi
-
