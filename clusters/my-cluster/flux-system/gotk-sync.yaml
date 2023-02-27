@@ -21,6 +21,7 @@ metadata:
 spec:
   interval: 10m0s
   path: ./clusters/my-cluster
+  force: true
   prune: true
   sourceRef:
     kind: GitRepository
