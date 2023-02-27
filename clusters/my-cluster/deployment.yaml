@@ -18,6 +18,7 @@ spec:
     spec:
       containers:
         - image: alpine
-          envFrom:
-            - secretRef:
-              name: example
+          name: alpine
+          # envFrom:
+          #   - secretRef:
+          #     name: example
