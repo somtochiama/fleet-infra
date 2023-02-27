@@ -8,6 +8,7 @@ metadata:
   labels:
     app: podinfo
   name: special
+  namespace: flux-system
 spec:
   containers:
   - name: podinfod
