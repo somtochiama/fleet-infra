@@ -22,7 +22,7 @@ spec:
       containerPort: 9797
       protocol: TCP
     - name: grpc2
-      containerPort: 9998
+      containerPort: 9990
       protocol: TCP
     command:
     - ./podinfo
