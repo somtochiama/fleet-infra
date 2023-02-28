@@ -43,4 +43,6 @@ images:
   - name: ghcr.io/fluxcd/source-controller
     newName: somma/source-controller
     newTag: digest-a8fc26c
+  - name: ghcr.io/fluxcd/helm-controller
+    newTag: rc-0bfbc3ee
 
