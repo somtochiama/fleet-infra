@@ -22,7 +22,7 @@ spec:
       containerPort: 9797
       protocol: TCP
     - name: grpc2
-      containerPort: 9999
+      containerPort: 9991
       protocol: TCP
     command:
     - ./podinfo
@@ -34,7 +34,7 @@ spec:
     - --random-delay=false
     - --random-error=false
     env:
-    - name: PODINFO_UI_COLOR
+    - name: PODINFO_UI_COLORs
       value: "#34577c"
     # - name: EXTRA_KEY
     #   value: "#34577c"
