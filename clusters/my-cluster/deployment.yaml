@@ -38,9 +38,9 @@ spec:
       value: "#34577c"
     # - name: EXTRA_KEY
     #   value: "#34577c"
-    # envFrom:
-    # - secretRef:
-    #   name: example
+    envFrom:
+    - secretRef:
+      name: example
     livenessProbe:
       exec:
         command:
