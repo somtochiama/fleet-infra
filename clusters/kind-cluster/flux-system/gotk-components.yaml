@@ -6444,7 +6444,6 @@ metadata:
     app.kubernetes.io/part-of: flux
     app.kubernetes.io/version: v0.39.0
     control-plane: controller
-    azure.workload.identity/use: "true"
   name: kustomize-controller
   namespace: flux-system
 spec:
@@ -6459,6 +6458,7 @@ spec:
         prometheus.io/scrape: "true"
       labels:
         app: kustomize-controller
+        azure.workload.identity/use: "true"
     spec:
       containers:
       - args:
