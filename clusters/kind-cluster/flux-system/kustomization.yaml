@@ -7,6 +7,6 @@ images:
   - name: ghcr.io/fluxcd/kustomize-controller
     newName: somma/kustomize-controller
     newTag: azidentity3
-  - name: ghcr.io/fluxcd/source-controller
-    newName: somma/source-controller
-    newTag: azidentity
+  # - name: ghcr.io/fluxcd/source-controller
+  #   newName: somma/source-controller
+  #   newTag: azidentity
