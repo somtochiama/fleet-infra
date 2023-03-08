@@ -6648,6 +6648,8 @@ spec:
               fieldPath: metadata.namespace
         - name: TUF_ROOT
           value: /tmp/.sigstore
+        - name: AZURE_CLIENT_ID
+          value: 7c0f44d8-67b9-4b4c-8b0e-d669c720295f
         image: ghcr.io/fluxcd/source-controller:v0.34.0
         imagePullPolicy: IfNotPresent
         livenessProbe:
