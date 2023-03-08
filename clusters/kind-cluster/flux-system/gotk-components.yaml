@@ -6542,6 +6542,7 @@ spec:
         prometheus.io/scrape: "true"
       labels:
         app: notification-controller
+        azure.workload.identity/use: "true"
     spec:
       containers:
       - args:
