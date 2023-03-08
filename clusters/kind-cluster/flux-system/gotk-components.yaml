@@ -6458,7 +6458,6 @@ spec:
         prometheus.io/scrape: "true"
       labels:
         app: kustomize-controller
-        azure.workload.identity/use: "true"
     spec:
       containers:
       - args:
@@ -6632,7 +6631,6 @@ spec:
         prometheus.io/scrape: "true"
       labels:
         app: source-controller
-        azure.workload.identity/use: "true"
     spec:
       containers:
       - args:
