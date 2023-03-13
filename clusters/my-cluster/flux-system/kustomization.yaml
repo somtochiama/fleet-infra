@@ -33,6 +33,15 @@ patches:
       kind: Deployment
       name: source-controller
       namespace: flux-system
+patchesStrategicMerge:
+  - |-
+    $patch: delete
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: notification-controller
+      namespace: flux-system
+      
 images:
   - name: ghcr.io/fluxcd/kustomize-controller
     newName: somma/source-controller
@@ -45,4 +54,3 @@ images:
     newTag: digest-a8fc26c
   - name: ghcr.io/fluxcd/helm-controller
     newTag: rc-0bfbc3ee
-

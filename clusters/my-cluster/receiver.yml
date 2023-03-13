@@ -13,7 +13,7 @@ spec:
     name: webhook-token
   resources:
     - kind: ImageRepository
-      name: *
+      name: "*"
       namespace: default
       matchLabels:
         label: app
