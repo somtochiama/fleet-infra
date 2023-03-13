@@ -48,6 +48,15 @@ patches:
       spec:
         decryption:
           provider: sops
+patchesStrategicMerge:
+  - |-
+    apiVersion: v1
+    kind: ServiceAccount
+    metadata:
+      name: kustomize-controller
+      namespace: flux-system
+      annotations:
+        iam.gke.io/gcp-service-account: <SERVICE_ACCOUNT_ID>@<PROJECT_ID>.iam.gserviceaccount.com  
 #patchesStrategicMerge:
 #  - |-
 #    $patch: delete
