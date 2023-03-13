@@ -48,15 +48,15 @@ patches:
       spec:
         decryption:
           provider: sops
-patchesStrategicMerge:
-  - |-
-    $patch: delete
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: notification-controller
-      namespace: flux-system
-      
+#patchesStrategicMerge:
+#  - |-
+#    $patch: delete
+#    apiVersion: apps/v1
+#    kind: Deployment
+#    metadata:
+#      name: notification-controller
+#      namespace: flux-system
+#      
 images:
   - name: ghcr.io/fluxcd/kustomize-controller
     newName: somma/source-controller
