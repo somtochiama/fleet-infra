@@ -5,7 +5,9 @@ metadata:
   annotations:
     prometheus.io/scrape: "true"
     prometheus.io/port: "9797"
+    password: mine
   labels:
+    data: you
     app: podinfo
   name: special
   namespace: flux-system
