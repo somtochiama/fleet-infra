@@ -12,7 +12,8 @@ spec:
   secretRef:
     name: webhook-token
   resources:
-    - kind: ImageRepository
+    - apiVersion: image.toolkit.fluxcd.io/v1beta1
+      kind: ImageRepository
       name: "*"
       namespace: default
       matchLabels:
