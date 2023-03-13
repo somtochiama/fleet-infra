@@ -3,7 +3,7 @@ apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageRepository
 metadata:
   name: podinfo
-  namespace: flux-system
+  namespace: default
 spec:
   image: gcr.io/dx-somtoxhi/podinfo
   interval: 5m0s
@@ -13,7 +13,7 @@ apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
   name: podinfo
-  namespace: flux-system
+  namespace: default
 spec:
   imageRepositoryRef:
     name: podinfo
@@ -25,7 +25,7 @@ apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageRepository
 metadata:
   name: podinfo-acr
-  namespace: flux-system
+  namespace: default
 spec:
   image: asia-southeast1-docker.pkg.dev/dx-somtoxhi/podinfo/podinfo
   interval: 5m0s
@@ -36,11 +36,10 @@ apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
   name: podinfo-acr
-  namespace: flux-system
+  namespace: default
 spec:
   imageRepositoryRef:
     name: podinfo-acr
   policy:
     semver:
       range: '>=6.0.0'
-
