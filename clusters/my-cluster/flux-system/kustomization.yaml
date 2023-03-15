@@ -57,15 +57,14 @@ patchesStrategicMerge:
       namespace: flux-system
       annotations:
         iam.gke.io/gcp-service-account: <SERVICE_ACCOUNT_ID>@<PROJECT_ID>.iam.gserviceaccount.com  
-#patchesStrategicMerge:
-#  - |-
-#    $patch: delete
-#    apiVersion: apps/v1
-#    kind: Deployment
-#    metadata:
-#      name: notification-controller
-#      namespace: flux-system
-#      
+  - |-
+    $patch: delete
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: notification-controller
+      namespace: flux-system
+
 images:
   - name: ghcr.io/fluxcd/kustomize-controller
     newName: somma/source-controller
