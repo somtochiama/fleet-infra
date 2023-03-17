@@ -27,7 +27,38 @@ patches:
     patch: |-
       - op: add
         path: /spec/template/spec/containers/0/args/-
-        value: --gcp-autologin-for-gcr    
+        value: --gcp-autologin-for-gcr
+  - target:
+      version: v1
+      group: apps
+      kind: Deployment
+      name: kustomize-controller
+      namespace: flux-system
+    patch: |-
+      apiVersion: v1
+      kind: Deployment
+      metadata:
+        name: kustomize-controller
+        namespace: flux-system
+      spec:
+        template:
+          spec:
+            containers:
+            - args:
+              - --events-addr=http://notification-controller.flux-system.svc.cluster.local./
+              - --watch-all-namespaces=true
+              - --log-level=info
+              - --log-encoding=json
+              - --enable-leader-election
+              - --concurrent=100
+              name: manager
+              resources:
+                limits:
+                  cpu: 0.4
+                  memory: 1Gi
+                requests:
+                  cpu: 0.2
+                  memory: 64Mi
   - path: sc-patch.json
     target:
       kind: Deployment
@@ -65,15 +96,15 @@ patchesStrategicMerge:
   #     name: notification-controller
   #     namespace: flux-system
 
-images:
-  - name: ghcr.io/fluxcd/kustomize-controller
-    newName: somma/source-controller
-    newTag: artifact-2a4e
-  - name: ghcr.io/fluxcd/notification-controller
-    newName: somma/notification-controller
-    newTag: digest-94740b4
-  - name: ghcr.io/fluxcd/source-controller
-    newName: somma/source-controller
-    newTag: digest-a8fc26c
-  - name: ghcr.io/fluxcd/helm-controller
-    newTag: rc-0bfbc3ee
+# images:
+#   - name: ghcr.io/fluxcd/kustomize-controller
+#     newName: somma/source-controller
+#     newTag: artifact-2a4e
+#   - name: ghcr.io/fluxcd/notification-controller
+#     newName: somma/notification-controller
+#     newTag: digest-94740b4
+#   - name: ghcr.io/fluxcd/source-controller
+#     newName: somma/source-controller
+#     newTag: digest-a8fc26c
+#   - name: ghcr.io/fluxcd/helm-controller
+#     newTag: rc-0bfbc3ee
