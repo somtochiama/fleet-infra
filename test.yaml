@@ -10,7 +10,7 @@ metadata:
   name: podinfo-${i}
   namespace: test-${i}
 spec:
-  interval: 5m0s
+  interval: 30m0s
   path: ./kustomize
   prune: true
   sourceRef:
@@ -18,3 +18,15 @@ spec:
     name: podinfo
     namespace: flux-system
   targetNamespace: test-${i}
+  patches:
+    - patch: |-
+        apiVersion: autoscaling/v2
+        kind: HorizontalPodAutoscaler
+        metadata:
+          name: podinfo
+        spec:
+          minReplicas: 1
+          maxReplicas: 1   
+      target:
+        kind: HorizontalPodAutoscaler
+        name: podinfo
