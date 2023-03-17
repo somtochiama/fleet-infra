@@ -99,7 +99,7 @@ patchesStrategicMerge:
 images:
   - name: ghcr.io/fluxcd/kustomize-controller
     newName: somma/kustomize-controller
-    newTag: log-update
+    newTag: log-update-2
 #   - name: ghcr.io/fluxcd/notification-controller
 #     newName: somma/notification-controller
 #     newTag: digest-94740b4
