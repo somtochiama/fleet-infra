@@ -56,7 +56,7 @@ patchesStrategicMerge:
       name: kustomize-controller
       namespace: flux-system
       annotations:
-        iam.gke.io/gcp-service-account: <SERVICE_ACCOUNT_ID>@<PROJECT_ID>.iam.gserviceaccount.com  
+        iam.gke.io/gcp-service-account: gcp-kms-365@dx-somtoxhi.iam.gserviceaccount.com  
   # - |-
   #   $patch: delete
   #   apiVersion: apps/v1
