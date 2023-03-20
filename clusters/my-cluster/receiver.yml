@@ -16,5 +16,6 @@ spec:
       kind: ImagePolicy
       name: "*"
       namespace: default
-      # matchLabels:
-      #   label: appss
+      matchLabels:
+        label: apps
+        me: you
