@@ -16,5 +16,5 @@ spec:
       kind: ImageRepository
       name: "*"
       namespace: default
-      matchLabels:
-        label: appss
+      # matchLabels:
+      #   label: appss
