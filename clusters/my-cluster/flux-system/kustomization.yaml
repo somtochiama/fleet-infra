@@ -88,18 +88,17 @@ patchesStrategicMerge:
       namespace: flux-system
       annotations:
         iam.gke.io/gcp-service-account: gcp-kms-365@dx-somtoxhi.iam.gserviceaccount.com  
-  # - |-
-  #   $patch: delete
-  #   apiVersion: apps/v1
-  #   kind: Deployment
-  #   metadata:
-  #     name: notification-controller
-  #     namespace: flux-system
-
-images:
-  - name: ghcr.io/fluxcd/kustomize-controller
-    newName: somma/kustomize-controller
-    newTag: log-update-3
+  - |-
+    $patch: delete
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: notification-controller
+      namespace: flux-system
+# images:
+#   - name: ghcr.io/fluxcd/kustomize-controller
+#     newName: somma/kustomize-controller
+#     newTag: log-update-3
 #   - name: ghcr.io/fluxcd/notification-controller
 #     newName: somma/notification-controller
 #     newTag: digest-94740b4
