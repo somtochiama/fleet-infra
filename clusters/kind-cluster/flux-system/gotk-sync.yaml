@@ -9,9 +9,9 @@ spec:
   interval: 1m0s
   ref:
     branch: main
-  secretRef:
-    name: flux-system
-  url: ssh://git@github.com/somtochiama/fleet-infra
+  # secretRef:
+  #   name: flux-system
+  url: https://github.com/somtochiama/fleet-infra
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
@@ -20,12 +20,12 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./clusters/kind-cluster
+  path: ./clusters/secret
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
   decryption:
     provider: sops
-    secretRef:
-      name: sops-key
+    # secretRef:
+    #   name: sops-key
