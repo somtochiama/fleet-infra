@@ -7,5 +7,5 @@ metadata:
 spec:
   interval: 5m0s
   provider: azure
-  bucketName: flux
-  endpoint: https://testfluxsaas.blob.core.windows.net
+  bucketName: more
+  endpoint: https://testfluxsaass.blob.core.windows.net

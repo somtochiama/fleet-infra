@@ -10,3 +10,27 @@ images:
   # - name: ghcr.io/fluxcd/source-controller
   #   newName: somma/source-controller
   #   newTag: azidentity
+patches:
+  - patch: |-
+      apiVersion: v1
+      kind: ServiceAccount
+      metadata:
+        name: kustomize-controller
+        namespace: flux-system
+        annotations:
+          azure.workload.identity/client-id: "%s"
+        labels:
+          azure.workload.identity/use: "true"
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: kustomize-controller
+        namespace: flux-system
+        labels:
+          azure.workload.identity/use: "true"
+      spec:
+        template:
+          metadata:
+            labels:
+              azure.workload.identity/use: "true"
