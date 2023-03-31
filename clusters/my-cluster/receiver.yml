@@ -19,27 +19,3 @@ spec:
       matchLabels:
         label: apps
         me: you
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: image-reflector-controller
-  namespace: flux-system
-  annotations:
-    azure.workload.identity/client-id: "01b1f0ca-7627-41ac-9d0c-3961f6b285c5"
-  labels:
-    azure.workload.identity/use: "true"
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: image-reflector-controller
-  namespace: flux-system
-  labels:
-    azure.workload.identity/use: "true"
-spec:
-  template:
-    metadata:
-      labels:
-        azure.workload.identity/use: "true"
-

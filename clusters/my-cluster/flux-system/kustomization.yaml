@@ -87,10 +87,10 @@ patches:
 #     metadata:
 #       name: notification-controller
 #       namespace: flux-system
-# images:
-# - name: ghcr.io/fluxcd/kustomize-controller
-#   newName: somma/kustomize-controller
-#   newTag: rc-0.0.1
+images:
+- name: ghcr.io/fluxcd/kustomize-controller
+  newName: somma/kustomize-controller
+  newTag: rc-0.0.1
 #   - name: ghcr.io/fluxcd/notification-controller
 #     newName: somma/notification-controller
 #     newTag: digest-94740b4
