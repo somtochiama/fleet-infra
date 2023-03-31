@@ -28,100 +28,69 @@ patches:
       - op: add
         path: /spec/template/spec/containers/0/args/-
         value: --gcp-autologin-for-gcr
-  - target:
-      version: v1
-      group: apps
-      kind: Deployment
-      name: kustomize-controller
-      namespace: flux-system
-    patch: |-
-      apiVersion: v1
-      kind: Deployment
-      metadata:
-        name: kustomize-controller
-        namespace: flux-system
-      spec:
-        template:
-          spec:
-            containers:
-            - args:
-              - --events-addr=http://notification-controller.flux-system.svc.cluster.local./
-              - --watch-all-namespaces=true
-              - --log-level=info
-              - --log-encoding=json
-              - --enable-leader-election
-              - --concurrent=100
-              name: manager
-              resources:
-                limits:
-                  cpu: 0.4
-                  memory: 1Gi
-                requests:
-                  cpu: 0.2
-                  memory: 64Mi
   - path: sc-patch.json
     target:
       kind: Deployment
       name: source-controller
       namespace: flux-system
-  - target:
-      version: v1beta2
-      group: kustomize.toolkit.fluxcd.io
-      kind: Kustomization
-      name: flux-system
-      namespace: flux-system
-    patch: |-
-      apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-      kind: Kustomization
-      metadata:
-        name: flux-system
-        namespace: flux-system
-      spec:
-        decryption:
-          provider: sops
-  - patch: |-
-      apiVersion: v1
-      kind: ServiceAccount
-      metadata:
-        name: image-reflector-controller
-        namespace: flux-system
-        annotations:
-          azure.workload.identity/client-id: "%s"
-        labels:
-          azure.workload.identity/use: "true"
-  - patch: |-
-      apiVersion: apps/v1
-      kind: Deployment
-      metadata:
-        name: image-reflector-controller
-        namespace: flux-system
-        labels:
-          azure.workload.identity/use: "true"
-      spec:
-        template:
-          metadata:
-            labels:
-              azure.workload.identity/use: "true"
-patchesStrategicMerge:
-  - |-
-    apiVersion: v1
-    kind: ServiceAccount
-    metadata:
-      name: kustomize-controller
-      namespace: flux-system
-      annotations:
-        iam.gke.io/gcp-service-account: gcp-kms-365@dx-somtoxhi.iam.gserviceaccount.com  
-  - |-
-    $patch: delete
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: notification-controller
-      namespace: flux-system
+  # - target:
+  #     version: v1beta2
+  #     group: kustomize.toolkit.fluxcd.io
+  #     kind: Kustomization
+  #     name: flux-system
+  #     namespace: flux-system
+  #   patch: |-
+  #     apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+  #     kind: Kustomization
+  #     metadata:
+  #       name: flux-system
+  #       namespace: flux-system
+  #     spec:
+  #       decryption:
+  #         provider: sops
+  # - patch: |-
+  #     apiVersion: v1
+  #     kind: ServiceAccount
+  #     metadata:
+  #       name: image-reflector-controller
+  #       namespace: flux-system
+  #       annotations:
+  #         azure.workload.identity/client-id: "%s"
+  #       labels:
+  #         azure.workload.identity/use: "true"
+  # - patch: |-
+  #     apiVersion: apps/v1
+  #     kind: Deployment
+  #     metadata:
+  #       name: image-reflector-controller
+  #       namespace: flux-system
+  #       labels:
+  #         azure.workload.identity/use: "true"
+  #     spec:
+  #       template:
+  #         metadata:
+  #           labels:
+  #             azure.workload.identity/use: "true"
+# patchesStrategicMerge:
+#   - |-
+#     apiVersion: v1
+#     kind: ServiceAccount
+#     metadata:
+#       name: kustomize-controller
+#       namespace: flux-system
+#       annotations:
+#         iam.gke.io/gcp-service-account: gcp-kms-365@dx-somtoxhi.iam.gserviceaccount.com  
+#   - |-
+#     $patch: delete
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     metadata:
+#       name: notification-controller
+#       namespace: flux-system
 # images:
-#   - name: ghcr.io/fluxcd/kustomize-controller
-#     newName: somma/kustomize-controller
-#     newTag: log-update-3
+# - name: ghcr.io/fluxcd/kustomize-controller
+#   newName: somma/kustomize-controller
+#   newTag: rc-0.0.1
 #   - name: ghcr.io/fluxcd/notification-controller
 #     newName: somma/notification-controller
 #     newTag: digest-94740b4
