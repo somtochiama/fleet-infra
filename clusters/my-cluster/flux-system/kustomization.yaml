@@ -8,6 +8,7 @@ patches:
   - target:
       kind: Deployment
       name: "(source-controller|kustomize-controller|helm-controller)"
+      annotationSelector: "sharding.fluxcd.io/role notin (shard)"
     patch: |
       - op: add
         path: /spec/template/spec/containers/0/args/0
