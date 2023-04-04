@@ -18,7 +18,9 @@ metadata:
 spec:
   interval: 10m
   targetNamespace: default
+  prune: true
   sourceRef:
     kind: GitRepository
     name: podinfo
+    namespace: flux-system
   path: ./kustomize
