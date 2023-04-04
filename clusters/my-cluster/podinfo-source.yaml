@@ -4,6 +4,8 @@ kind: GitRepository
 metadata:
   name: podinfo
   namespace: flux-system
+  labels:
+    sharding.fluxcd.io/key: shard1
 spec:
   interval: 2m
   ref:
