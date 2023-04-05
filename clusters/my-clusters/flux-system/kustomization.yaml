@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
-- pvc.yaml
+# - pvc.yaml
 patches:
   - target:
       version: v1
@@ -18,11 +18,11 @@ patches:
         namespace: flux-system
       spec:
         type: LoadBalancer
-  - path: sc-patch.json
-    target:
-      kind: Deployment
-      name: source-controller
-      namespace: flux-system
+  # - path: sc-patch.json
+  #   target:
+  #     kind: Deployment
+  #     name: source-controller
+  #     namespace: flux-system
   # - target:
   #     version: v1beta2
   #     group: kustomize.toolkit.fluxcd.io
