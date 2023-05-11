@@ -18,6 +18,15 @@ patches:
         namespace: flux-system
       spec:
         type: LoadBalancer
+  - patch: |
+      - op: add
+        path: /spec/template/spec/containers/0/env/-
+        value:
+          name: AZURE_CLIENT_ID
+          value: 928d712d-9b59-4465-ba1d-dae4e8afd644
+    target:
+      kind: Deployment
+      name: "(helm-controller|source-controller)"
   # - path: sc-patch.json
   #   target:
   #     kind: Deployment
