@@ -23,7 +23,7 @@ patches:
         path: /spec/template/spec/containers/0/env/-
         value:
           name: AZURE_CLIENT_ID
-          value: 928d712d-9b59-4465-ba1d-dae4e8afd644
+          value: cg
     target:
       kind: Deployment
       name: "(helm-controller|source-controller)"
