@@ -6,5 +6,5 @@ metadata:
 spec:
   type: oci
   provider: azure
-  url: oci://testwi.azurecr.io
+  url: oci://testwi.azurecr.io/flux-oci
   interval: 5m
