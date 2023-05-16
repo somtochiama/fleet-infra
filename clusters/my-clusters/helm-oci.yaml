@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: myacr
+  namespace: flux-systems
+spec:
+  type: oci
+  provider: azure
+  url: oci://testwi.azurecr.io
+  interval: 5m
