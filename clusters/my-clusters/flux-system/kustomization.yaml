@@ -29,8 +29,8 @@ patches:
       name: "(helm-controller|source-controller)"
   - target:
       version: v1
-      kind: Service
-      name: notification-controller
+      kind: Kustomization
+      name: flux-system
       namespace: flux-system
     patch: |
       apiVersion: kustomize.toolkit.fluxcd.io/v1
