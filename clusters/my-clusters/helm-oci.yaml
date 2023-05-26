@@ -20,7 +20,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: dx-somtoxhi/podinfo/charts
+      chart: dx-somtoxhi/podinfo/charts/podinfo
       sourceRef:
         kind: HelmRepository
         name: myacr
