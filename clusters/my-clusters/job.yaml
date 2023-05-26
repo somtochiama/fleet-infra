@@ -3,8 +3,9 @@ kind: Job
 metadata:
   name: flux-system
   namespace: flux-system
-#  labels:
-#    kustomize.toolkit.fluxcd.io/force: enabled
+  labels:
+    kustomize.toolkit.fluxcd.io/force: enabled
+    kustomize.toolkit.fluxcd.io/substitute: disabled
 spec:
   template:
     spec:
