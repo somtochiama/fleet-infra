@@ -6,7 +6,7 @@ metadata:
 spec:
   type: oci
   provider: azure
-  url: oci://testwi.azurecr.io
+  url: oci://gcr.io
   interval: 5m
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
@@ -20,7 +20,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: podinfo/oci
+      chart: dx-somtoxhi/podinfo/charts
       sourceRef:
         kind: HelmRepository
         name: myacr
