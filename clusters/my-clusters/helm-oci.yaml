@@ -8,13 +8,15 @@ spec:
   provider: azure
   url: oci://gcr.io
   interval: 5m
+  chart:
+    spec:
+      version: master@sha1:073f1ec5aff930bd3411d33534e91cbe23302324
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   annotations:
-    metadata.weave.works/description: This is the Weave GitOps Dashboard.  It provides
-      a simple way to get insights into your GitOps workloads.
+    metadata.weave.works/description: This is the Weave GitOps Dashboard.  It provides a simple way to get insights into your GitOps workloads.
   name: myacr
   namespace: flux-system
 spec:
@@ -24,5 +26,5 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: myacr
-      version: '6.3.6'
+      version: 'master@sha1:073f1ec5aff930bd3411d33534e91cbe23302324'
   interval: 20m
