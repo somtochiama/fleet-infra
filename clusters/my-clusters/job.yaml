@@ -6,6 +6,7 @@ metadata:
   labels:
     kustomize.toolkit.fluxcd.io/force: enabled
     kustomize.toolkit.fluxcd.io/substitute: disabled
+    kustomize.toolkit.fluxcd.io/substitutes: disabled
 spec:
   template:
     spec:
