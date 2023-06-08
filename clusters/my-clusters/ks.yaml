@@ -5,7 +5,7 @@ metadata:
   name: secrets
   namespace: flux-system
 spec:
-  targetNamespace: flux-system
+#  targetNamespace: flux-system
   interval: 10m0s
   path: ./secrets
   prune: true
