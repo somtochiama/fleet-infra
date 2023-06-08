@@ -6,7 +6,7 @@ kind: ENC[AES256_GCM,data:2Om1e6D/,iv:gl7kv82bx4/Y1dW5zBRy0H/+6pH7KL41xLgpnFzMSM
 metadata:
     creationTimestamp: null
     name: ENC[AES256_GCM,data:4aqDVzM7nZghzQ==,iv:Xi+MZk0uFGN/bjR5TPQZkYkU9e97Ya6YyvB7r4X4tHw=,tag:oyq42sHP64Gxrtn+DQZ9nA==,type:str]
-#    namespace: ENC[AES256_GCM,data:+PcFdnXehg==,iv:ENTA/vCKU4lxtl5OOyZafzFCMddH+cpj4IiMG7aDVu4=,tag:HdQaqGujbxBP4wYebvXdTA==,type:str]
+    namespace: ENC[AES256_GCM,data:+PcFdnXehg==,iv:ENTA/vCKU4lxtl5OOyZafzFCMddH+cpj4IiMG7aDVu4=,tag:HdQaqGujbxBP4wYebvXdTA==,type:str]
 sops:
     kms: []
     gcp_kms: []
