@@ -27,23 +27,23 @@ patches:
     target:
       kind: Deployment
       name: "(helm-controller|source-controller)"
-  - target:
-      version: v1
-      kind: Kustomization
-      name: flux-system
-      namespace: flux-system
-    patch: |
-      apiVersion: kustomize.toolkit.fluxcd.io/v1
-      kind: Kustomization
-      metadata:
-        name: flux-system
-        namespace: flux-system
-      spec:
-        force: true
-        decryption:
-          provider: sops
-          secretRef:
-            name: sops-gpg
+#  - target:
+#      version: v1
+#      kind: Kustomization
+#      name: flux-system
+#      namespace: flux-system
+#    patch: |
+#      apiVersion: kustomize.toolkit.fluxcd.io/v1
+#      kind: Kustomization
+#      metadata:
+#        name: flux-system
+#        namespace: flux-system
+#      spec:
+#        force: true
+#        decryption:
+#          provider: sops
+#          secretRef:
+#            name: sops-gpg
   # - path: sc-patch.json
   #   target:
   #     kind: Deployment

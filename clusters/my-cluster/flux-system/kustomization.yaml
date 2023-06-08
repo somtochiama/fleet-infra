@@ -3,13 +3,12 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
-- shard1
-patches:
-  - target:
-      kind: Deployment
-      name: "(source-controller|kustomize-controller|helm-controller)"
-      annotationSelector: "sharding.fluxcd.io/role notin (shard)"
-    patch: |
-      - op: add
-        path: /spec/template/spec/containers/0/args/0
-        value: --watch-label-selector=sharding.fluxcd.io/key notin (shard1, shard2)
+#patches:
+#  - target:
+#      kind: Deployment
+#      name: "(source-controller|kustomize-controller|helm-controller)"
+#      annotationSelector: "sharding.fluxcd.io/role notin (shard)"
+#    patch: |
+#      - op: add
+#        path: /spec/template/spec/containers/0/args/0
+#        value: --watch-label-selector=sharding.fluxcd.io/key notin (shard1, shard2)
