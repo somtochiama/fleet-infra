@@ -3,7 +3,10 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
-# - pvc.yaml
+images:
+    - name: ghcr.io/fluxcd/helm-controller
+      newName: somma/helm-controller
+      newTag: new-reconcile
 patches:
   - target:
       version: v1
@@ -18,15 +21,15 @@ patches:
         namespace: flux-system
       spec:
         type: LoadBalancer
-  - patch: |
-      - op: add
-        path: /spec/template/spec/containers/0/env/-
-        value:
-          name: AZURE_CLIENT_ID
-          value: cd9f0a72-c5f7-4659-af54-6c8d825edcb5
-    target:
-      kind: Deployment
-      name: "(helm-controller|source-controller)"
+#  - patch: |
+#      - op: add
+#        path: /spec/template/spec/containers/0/env/-
+#        value:
+#          name: AZURE_CLIENT_ID
+#          value: cd9f0a72-c5f7-4659-af54-6c8d825edcb5
+#    target:
+#      kind: Deployment
+#      name: "(helm-controller|source-controller)"
 #  - target:
 #      version: v1
 #      kind: Kustomization
@@ -104,6 +107,8 @@ patches:
 #       name: notification-controller
 #       namespace: flux-system
 # images:
+#  - name: ghcr.io/fluxcd/helm-controller
+#    newTag: rc-0bfbc3ee
 # - name: ghcr.io/fluxcd/kustomize-controller
 #   newName: somma/kustomize-controller
 #   newTag: rc-0.0.1
@@ -113,5 +118,4 @@ patches:
 #   - name: ghcr.io/fluxcd/source-controller
 #     newName: somma/source-controller
 #     newTag: digest-a8fc26c
-#   - name: ghcr.io/fluxcd/helm-controller
-#     newTag: rc-0bfbc3ee
+
