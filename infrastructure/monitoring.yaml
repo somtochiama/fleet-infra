@@ -19,6 +19,7 @@ spec:
   interval: 1h0m0s
   path: ./manifests/monitoring/kube-prometheus-stack
   prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-monitoring
@@ -34,6 +35,7 @@ spec:
   interval: 1h0m0s
   path: ./manifests/monitoring/monitoring-config
   prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-monitoring
