@@ -8,7 +8,7 @@ spec:
   interval: 30m0s
   ref:
     branch: ksm-dashboard
-  url: https://github.com/fluxcd/flux2
+  url: https://github.com/somtchiama/flux2
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
