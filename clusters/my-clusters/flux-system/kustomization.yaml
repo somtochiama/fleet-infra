@@ -3,10 +3,10 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
-images:
-    - name: ghcr.io/fluxcd/helm-controller
-      newName: somma/helm-controller
-      newTag: new-reconcile
+#images:
+#    - name: ghcr.io/fluxcd/helm-controller
+#      newName: somma/helm-controller
+#      newTag: new-reconcile
 patches:
   - target:
       version: v1
