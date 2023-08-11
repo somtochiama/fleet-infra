@@ -11,4 +11,4 @@ spec:
     tag: v0.0.2
   url: oci://testwi.azurecr.io/flux-oci
   secretRef:
-    nameL myregistrykey
+    name: myregistrykey
