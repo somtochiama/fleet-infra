@@ -7,8 +7,8 @@ metadata:
 spec:
   interval: 30m0s
   ref:
-    branch: ksm-dashboard
-  url: https://github.com/somtochiama/flux2
+    branch: monitoring-config
+  url: https://github.com/fluxcd/flux2-monitoring-example
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -17,7 +17,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h0m0s
-  path: ./manifests/monitoring/kube-prometheus-stack
+  path: ./kube-prometheus-stack
   prune: true
   wait: true
   sourceRef:
@@ -33,7 +33,7 @@ spec:
   dependsOn:
   - name: kube-prometheus-stack
   interval: 1h0m0s
-  path: ./manifests/monitoring/monitoring-config
+  path: ./monitoring-config
   prune: true
   wait: true
   sourceRef:
