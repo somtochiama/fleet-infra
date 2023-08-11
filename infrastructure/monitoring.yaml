@@ -8,7 +8,7 @@ spec:
   interval: 30m0s
   ref:
     branch: monitoring-config
-  url: https://github.com/fluxcd/flux2-monitoring-example
+  url: https://github.com/somtochiama/flux2-monitoring-example
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
