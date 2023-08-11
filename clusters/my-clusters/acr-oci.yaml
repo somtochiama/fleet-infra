@@ -8,7 +8,5 @@ spec:
   interval: 10m0s
 #  provider: azure
   ref:
-    tag: v0.0.2
-  url: oci://testwi.azurecr.io/flux-oci
-  secretRef:
-    name: myregistrykey
+    tag: 6.1.6
+  url: oci://ghcr.io/stefanprodan/manifests/podinfo
