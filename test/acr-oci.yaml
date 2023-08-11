@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  provider: azure
+#  provider: azure
   ref:
     tag: v0.0.2
   url: oci://testwi.azurecr.io/flux-oci
