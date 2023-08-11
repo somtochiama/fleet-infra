@@ -33,6 +33,10 @@ patches:
     target:
       kind: Deployment
       name: helm-controller
+  - path: helm.toolkit.fluxcd.io_helmreleases.yaml
+    target:
+      kind: CustomResourceDefinition
+      name: helmreleases.helm.toolkit.fluxcd.io
 #  - patch: |
 #      - op: add
 #        path: /spec/template/spec/containers/0/env/-
