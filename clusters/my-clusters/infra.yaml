@@ -33,7 +33,7 @@ metadata:
 spec:
   interval: 1h
   path: ./apps
-#  serviceAccountName: no-secret
+  serviceAccountName: no-secret
   dependsOn:
     - name: roles
   prune: true
