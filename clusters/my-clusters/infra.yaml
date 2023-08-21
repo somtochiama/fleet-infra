@@ -5,7 +5,7 @@ metadata:
   name: infra
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 1h
   path: ./infrastructure
   prune: true
   sourceRef:
@@ -18,7 +18,7 @@ metadata:
   name: roles
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 1h
   path: ./roles
   prune: true
   sourceRef:
@@ -31,9 +31,9 @@ metadata:
   name: apps
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 1h
   path: ./apps
-  serviceAccountName: no-secret
+#  serviceAccountName: no-secret
   dependsOn:
     - name: roles
   prune: true
