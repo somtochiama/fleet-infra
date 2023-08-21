@@ -35,7 +35,7 @@ spec:
   path: ./apps
   serviceAccountName: no-secret
   dependsOn:
-    - roles
+    - name: roles
   prune: true
   sourceRef:
     kind: GitRepository
