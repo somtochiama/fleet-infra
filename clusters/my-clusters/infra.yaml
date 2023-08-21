@@ -32,7 +32,8 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  path: ./apps
+  path:
+  ./apps
 #  serviceAccountName: no-secret
   dependsOn:
     - name: roles
