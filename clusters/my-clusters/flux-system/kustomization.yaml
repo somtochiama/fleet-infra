@@ -3,10 +3,10 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
-images:
-    - name: ghcr.io/fluxcd/helm-controller
-      newName: somma/helm-controller
-      newTag: new-reconciler
+#images:
+#    - name: ghcr.io/fluxcd/helm-controller
+#      newName: somma/helm-controller
+#      newTag: new-reconciler
 patches:
   - target:
       version: v1
@@ -21,22 +21,45 @@ patches:
         namespace: flux-system
       spec:
         type: LoadBalancer
+#  - patch: |
+#      # Enable drift detection feature
+#      - op: add
+#        path: /spec/template/spec/containers/0/args/-
+#        value: --feature-gates=DetectDrift=true
+#      # Enable debug logging for diff output (optional)
+#      - op: replace
+#        path: /spec/template/spec/containers/0/args/2
+#        value: --log-level=debug
+#    target:
+#      kind: Deployment
+#      name: helm-controller
   - patch: |
-      # Enable drift detection feature
       - op: add
         path: /spec/template/spec/containers/0/args/-
-        value: --feature-gates=DetectDrift=true
-      # Enable debug logging for diff output (optional)
-      - op: replace
-        path: /spec/template/spec/containers/0/args/2
-        value: --log-level=debug
+        value: --concurrent=10
+      - op: add
+        path: /spec/template/spec/containers/0/args/-
+        value: --requeue-dependency=5s
     target:
       kind: Deployment
-      name: helm-controller
-  - path: helm.toolkit.fluxcd.io_helmreleases.yaml
+      name: "(kustomize-controller|helm-controller|source-controller)"
+  - patch: |
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: all
+      spec:
+        template:
+          spec:
+            containers:
+              - name: manager
+                resources:
+                  limits:
+                    cpu: 2000m
+                    memory: 2Gi
     target:
-      kind: CustomResourceDefinition
-      name: helmreleases.helm.toolkit.fluxcd.io
+      kind: Deployment
+      name: "(kustomize-controller|helm-controller|source-controller)"
 #  - patch: |
 #      - op: add
 #        path: /spec/template/spec/containers/0/env/-
