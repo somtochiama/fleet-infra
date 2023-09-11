@@ -1,0 +1,260 @@
+metadata:
+  name: kube-prometheus-stack-7918f2cb
+  namespace: flux-system
+spec:
+  url: https://prometheus-community.github.io/helm-charts
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: kube-prometheus-stack-7918f2cb
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: kube-prometheus-stack
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: kube-prometheus-stack-7918f2cb
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: ingress-nginx-625a0f57
+  namespace: flux-system
+spec:
+  url: https://kubernetes.github.io/ingress-nginx
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: ingress-nginx-625a0f57
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: ingress-nginx
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: ingress-nginx-625a0f57
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: cert-manager-f475c82a
+  namespace: flux-system
+spec:
+  url: https://charts.jetstack.io
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: cert-manager-f475c82a
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: cert-manager
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: cert-manager-f475c82a
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: argo-cd-e6f213e9
+  namespace: flux-system
+spec:
+  url: https://argoproj.github.io/argo-helm
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: argo-cd-e6f213e9
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: argo-cd
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: argo-cd-e6f213e9
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: prometheus-d5dad873
+  namespace: flux-system
+spec:
+  url: https://prometheus-community.github.io/helm-charts
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: prometheus-d5dad873
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: prometheus
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: prometheus-d5dad873
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: grafana-8ffffed8
+  namespace: flux-system
+spec:
+  url: https://grafana.github.io/helm-charts
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: grafana-8ffffed8
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: grafana
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: grafana-8ffffed8
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: redis-0602c8d2
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: redis-0602c8d2
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: redis
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: redis-0602c8d2
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: kubernetes-dashboard-2d84645c
+  namespace: flux-system
+spec:
+  url: https://kubernetes.github.io/dashboard
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: kubernetes-dashboard-2d84645c
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: kubernetes-dashboard
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: kubernetes-dashboard-2d84645c
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: postgresql-c617753b
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: postgresql-c617753b
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: postgresql
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: postgresql-c617753b
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: traefik-8ba0f6dc
+  namespace: flux-system
+spec:
+  url: https://traefik.github.io/charts
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: traefik-8ba0f6dc
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: traefik
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: traefik-8ba0f6dc
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+

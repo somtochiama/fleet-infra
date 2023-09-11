@@ -1,0 +1,260 @@
+metadata:
+  name: wordpress-aba45f84
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: wordpress-aba45f84
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: wordpress
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: wordpress-aba45f84
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: cilium-9ea94cbd
+  namespace: flux-system
+spec:
+  url: https://helm.cilium.io/
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: cilium-9ea94cbd
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: cilium
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: cilium-9ea94cbd
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: nginx-bec45f52
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: nginx-bec45f52
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: nginx
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: nginx-bec45f52
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: consul-523fac59
+  namespace: flux-system
+spec:
+  url: https://helm.releases.hashicorp.com
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: consul-523fac59
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: consul
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: consul-523fac59
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: metallb-0a8ae203
+  namespace: flux-system
+spec:
+  url: https://metallb.github.io/metallb
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: metallb-0a8ae203
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: metallb
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: metallb-0a8ae203
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: metrics-server-29ddb6cc
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: metrics-server-29ddb6cc
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: metrics-server
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: metrics-server-29ddb6cc
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: thanos-d1337d39
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: thanos-d1337d39
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: thanos
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: thanos-d1337d39
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: pihole-e047d633
+  namespace: flux-system
+spec:
+  url: https://mojo2600.github.io/pihole-kubernetes/
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: pihole-e047d633
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: pihole
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: pihole-e047d633
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: sonarqube-e908a05c
+  namespace: flux-system
+spec:
+  url: https://SonarSource.github.io/helm-chart-sonarqube
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: sonarqube-e908a05c
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: sonarqube
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: sonarqube-e908a05c
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: mariadb-97b49327
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: mariadb-97b49327
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: mariadb
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: mariadb-97b49327
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+

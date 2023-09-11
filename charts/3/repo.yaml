@@ -1,0 +1,260 @@
+metadata:
+  name: kafka-4db236a8
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: kafka-4db236a8
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: kafka
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: kafka-4db236a8
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: keycloak-dd4ec18f
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: keycloak-dd4ec18f
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: keycloak
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: keycloak-dd4ec18f
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: mongodb-c5f53072
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: mongodb-c5f53072
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: mongodb
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: mongodb-c5f53072
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: aws-load-balancer-controller-23c8140b
+  namespace: flux-system
+spec:
+  url: https://aws.github.io/eks-charts
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: aws-load-balancer-controller-23c8140b
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: aws-load-balancer-controller
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: aws-load-balancer-controller-23c8140b
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: nextcloud-3c40975b
+  namespace: flux-system
+spec:
+  url: https://nextcloud.github.io/helm/
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: nextcloud-3c40975b
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: nextcloud
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: nextcloud-3c40975b
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: gitlab-runner-c80986fd
+  namespace: flux-system
+spec:
+  url: http://charts.gitlab.io/
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: gitlab-runner-c80986fd
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: gitlab-runner
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: gitlab-runner-c80986fd
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: airflow-c9a58f93
+  namespace: flux-system
+spec:
+  url: https://airflow.apache.org/
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: airflow-c9a58f93
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: airflow
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: airflow-c9a58f93
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: cluster-autoscaler-99846b72
+  namespace: flux-system
+spec:
+  url: https://kubernetes.github.io/autoscaler
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: cluster-autoscaler-99846b72
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: cluster-autoscaler
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: cluster-autoscaler-99846b72
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: minio-14ffa4bf
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: minio-14ffa4bf
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: minio
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: minio-14ffa4bf
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: velero-8f456ca8
+  namespace: flux-system
+spec:
+  url: https://vmware-tanzu.github.io/helm-charts/
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: velero-8f456ca8
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: velero
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: velero-8f456ca8
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+

@@ -1,0 +1,260 @@
+metadata:
+  name: gitlab-1c1909b0
+  namespace: flux-system
+spec:
+  url: http://charts.gitlab.io/
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: gitlab-1c1909b0
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: gitlab
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: gitlab-1c1909b0
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: vault-8bc3a2af
+  namespace: flux-system
+spec:
+  url: https://helm.releases.hashicorp.com
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: vault-8bc3a2af
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: vault
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: vault-8bc3a2af
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: jenkins-8047293b
+  namespace: flux-system
+spec:
+  url: https://charts.jenkins.io/
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: jenkins-8047293b
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: jenkins
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: jenkins-8047293b
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: metrics-server-d2f4f54a
+  namespace: flux-system
+spec:
+  url: https://kubernetes-sigs.github.io/metrics-server/
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: metrics-server-d2f4f54a
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: metrics-server
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: metrics-server-d2f4f54a
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: mysql-b7b1cb6a
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: mysql-b7b1cb6a
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: mysql
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: mysql-b7b1cb6a
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: elasticsearch-e96e99a4
+  namespace: flux-system
+spec:
+  url: https://helm.elastic.co
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: elasticsearch-e96e99a4
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: elasticsearch
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: elasticsearch-e96e99a4
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: external-dns-6e331fd8
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: external-dns-6e331fd8
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: external-dns
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: external-dns-6e331fd8
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: loki-a779e8e7
+  namespace: flux-system
+spec:
+  url: https://grafana.github.io/helm-charts
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: loki-a779e8e7
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: loki
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: loki-a779e8e7
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: rabbitmq-a5a1e501
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: rabbitmq-a5a1e501
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: rabbitmq
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: rabbitmq-a5a1e501
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+---
+metadata:
+  name: harbor-466e5558
+  namespace: flux-system
+spec:
+  url: https://helm.goharbor.io
+  interval: 10m
+  timeout: 1m
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+---
+metadata:
+  name: harbor-466e5558
+  namespace: flux-system
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: harbor
+      version: '*'
+      interval: 10m
+      sourceRef:
+        kind: HelmRepository
+        name: harbor-466e5558
+kind: HelmRelease
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+

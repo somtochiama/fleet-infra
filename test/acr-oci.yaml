@@ -3,10 +3,11 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: OCIRepository
 metadata:
   name: podinfo
-  namespace: flux-system
+  namespace: default
 spec:
   interval: 10m0s
-#  provider: azure
+  provider: azure
+  serviceAccountName: test-wi
   ref:
     tag: v0.0.2
-  url: oci://testwi.azurecr.io/flux-oci
+  url: oci://acrappschipmunk.azurecr.io/podinfo
