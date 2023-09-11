@@ -25,44 +25,44 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: helm-3
-  namespace: flux-system
-spec:
-  interval: 1h
-  path: ./charts/3
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: helm-4
-  namespace: flux-system
-spec:
-  interval: 1h
-  path: ./charts/4
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: helm-5
-  namespace: flux-system
-spec:
-  interval: 1h
-  path: ./charts/5
-  dependsOn:
-    - name: helm-3
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
+#---
+#apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+#kind: Kustomization
+#metadata:
+#  name: helm-3
+#  namespace: flux-system
+#spec:
+#  interval: 1h
+#  path: ./charts/3
+#  prune: true
+#  sourceRef:
+#    kind: GitRepository
+#    name: flux-system
+#---
+#apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+#kind: Kustomization
+#metadata:
+#  name: helm-4
+#  namespace: flux-system
+#spec:
+#  interval: 1h
+#  path: ./charts/4
+#  prune: true
+#  sourceRef:
+#    kind: GitRepository
+#    name: flux-system
+#---
+#apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+#kind: Kustomization
+#metadata:
+#  name: helm-5
+#  namespace: flux-system
+#spec:
+#  interval: 1h
+#  path: ./charts/5
+#  dependsOn:
+#    - name: helm-3
+#  prune: true
+#  sourceRef:
+#    kind: GitRepository
+#    name: flux-system
