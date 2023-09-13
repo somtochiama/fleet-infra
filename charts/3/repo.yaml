@@ -13,7 +13,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  timeout: 30m
+  timeout: 1h
   chart:
     spec:
       chart: kafka
@@ -40,7 +40,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  timeout: 30m
+  timeout: 1h
   chart:
     spec:
       chart: keycloak
@@ -67,7 +67,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  timeout: 30m
+  timeout: 1h
   chart:
     spec:
       chart: mongodb
@@ -120,7 +120,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  timeout: 30m
+  timeout: 1h
   chart:
     spec:
       chart: nextcloud
@@ -147,7 +147,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  timeout: 30m
+  timeout: 1h
   chart:
     spec:
       chart: gitlab-runner
@@ -174,7 +174,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  timeout: 30m
+  timeout: 1h
   chart:
     spec:
       chart: airflow
@@ -201,7 +201,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  timeout: 30m
+  timeout: 1h
   chart:
     spec:
       chart: cluster-autoscaler
@@ -228,7 +228,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  timeout: 30m
+  timeout: 1h
   chart:
     spec:
       chart: minio
@@ -255,7 +255,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  timeout: 30m
+  timeout: 1h
   chart:
     spec:
       chart: velero
