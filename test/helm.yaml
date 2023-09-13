@@ -56,6 +56,7 @@ metadata:
   name: podinfo
   namespace: flux-system
 spec:
+  interval: 1h
   chart:
     spec:
       chart: podinfo
@@ -64,4 +65,3 @@ spec:
         kind: HelmRepository
         name: podinfo
       version: '>4.0.0'
-  interval: 10m0s

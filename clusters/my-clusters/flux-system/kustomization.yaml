@@ -6,7 +6,7 @@ resources:
 images:
     - name: ghcr.io/fluxcd/helm-controller
       newName: somma/helm-controller
-      newTag: test-stuck-hr2
+      newTag: test-stuck-hr4
 patches:
   - target:
       version: v1
