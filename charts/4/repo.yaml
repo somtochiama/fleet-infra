@@ -24,32 +24,32 @@ spec:
 kind: HelmRelease
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 ---
-metadata:
-  name: longhorn-4791b1c3
-  namespace: flux-system
-spec:
-  url: https://charts.longhorn.io
-  interval: 10m
-  timeout: 1m
-kind: HelmRepository
-apiVersion: source.toolkit.fluxcd.io/v1beta2
----
-metadata:
-  name: longhorn-4791b1c3
-  namespace: flux-system
-spec:
-  interval: 10m
-  chart:
-    spec:
-      chart: longhorn
-      version: '*'
-      interval: 10m
-      sourceRef:
-        kind: HelmRepository
-        name: longhorn-4791b1c3
-kind: HelmRelease
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
----
+#metadata:
+#  name: longhorn-4791b1c3
+#  namespace: flux-system
+#spec:
+#  url: https://charts.longhorn.io
+#  interval: 10m
+#  timeout: 1m
+#kind: HelmRepository
+#apiVersion: source.toolkit.fluxcd.io/v1beta2
+#---
+#metadata:
+#  name: longhorn-4791b1c3
+#  namespace: flux-system
+#spec:
+#  interval: 10m
+#  chart:
+#    spec:
+#      chart: longhorn
+#      version: '*'
+#      interval: 10m
+#      sourceRef:
+#        kind: HelmRepository
+#        name: longhorn-4791b1c3
+#kind: HelmRelease
+#apiVersion: helm.toolkit.fluxcd.io/v2beta1
+#---
 metadata:
   name: external-dns-71e71874
   namespace: flux-system
@@ -180,32 +180,32 @@ spec:
 kind: HelmRelease
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 ---
-metadata:
-  name: kibana-b2ea09cb
-  namespace: flux-system
-spec:
-  url: https://helm.elastic.co
-  interval: 10m
-  timeout: 1m
-kind: HelmRepository
-apiVersion: source.toolkit.fluxcd.io/v1beta2
----
-metadata:
-  name: kibana-b2ea09cb
-  namespace: flux-system
-spec:
-  interval: 10m
-  chart:
-    spec:
-      chart: kibana
-      version: '*'
-      interval: 10m
-      sourceRef:
-        kind: HelmRepository
-        name: kibana-b2ea09cb
-kind: HelmRelease
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
----
+#metadata:
+#  name: kibana-b2ea09cb
+#  namespace: flux-system
+#spec:
+#  url: https://helm.elastic.co
+#  interval: 10m
+#  timeout: 1m
+#kind: HelmRepository
+#apiVersion: source.toolkit.fluxcd.io/v1beta2
+#---
+#metadata:
+#  name: kibana-b2ea09cb
+#  namespace: flux-system
+#spec:
+#  interval: 10m
+#  chart:
+#    spec:
+#      chart: kibana
+#      version: '*'
+#      interval: 10m
+#      sourceRef:
+#        kind: HelmRepository
+#        name: kibana-b2ea09cb
+#kind: HelmRelease
+#apiVersion: helm.toolkit.fluxcd.io/v2beta1
+#---
 metadata:
   name: external-secrets-67a49f70
   namespace: flux-system

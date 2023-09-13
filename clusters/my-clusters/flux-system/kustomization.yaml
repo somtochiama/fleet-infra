@@ -65,7 +65,7 @@ patches:
                     memory: 4Gi
     target:
       kind: Deployment
-      name: "(kustomize-controller|helm-controller|source-controller)"
+      name: "(helm-controller|source-controller)"
 #  - patch: |
 #      - op: add
 #        path: /spec/template/spec/containers/0/env/-
