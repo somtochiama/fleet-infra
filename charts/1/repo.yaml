@@ -13,6 +13,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: kube-prometheus-stack
@@ -39,6 +40,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: ingress-nginx
@@ -65,6 +67,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: cert-manager
@@ -91,6 +94,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: argo-cd
@@ -117,6 +121,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: prometheus
@@ -143,6 +148,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: grafana
@@ -169,6 +175,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: redis
@@ -195,6 +202,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: kubernetes-dashboard
@@ -221,6 +229,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: postgresql
@@ -247,6 +256,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: traefik

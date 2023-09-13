@@ -13,6 +13,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: gitlab
@@ -39,6 +40,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: vault
@@ -65,6 +67,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: jenkins
@@ -91,6 +94,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: metrics-server
@@ -117,6 +121,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: mysql
@@ -143,6 +148,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: elasticsearch
@@ -169,6 +175,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: external-dns
@@ -195,6 +202,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: loki
@@ -221,6 +229,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: rabbitmq
@@ -247,6 +256,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
+  timeout: 30m
   chart:
     spec:
       chart: harbor
