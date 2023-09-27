@@ -3,7 +3,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
   name: flaggerr
-  namespace: default
+  namespace: flux-system
 spec:
   interval: 1m0s
   url: https://flagger.app
@@ -16,14 +16,15 @@ metadata:
 spec:
   chart:
     spec:
+      interval: 1m0s
       chart: flagger
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
         name: flaggerr
-        namespace: default
+#        namespace: default
       version: '1.26.0'
-  interval: 1m0s
+  interval: 1h
   values:
     resource:
       limit:

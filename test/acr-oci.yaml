@@ -3,11 +3,11 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: OCIRepository
 metadata:
   name: podinfo
-  namespace: default
+  namespace: kube-system
 spec:
   interval: 10m0s
-  provider: azure
-  serviceAccountName: test-wi
+  provider: aws
+  serviceAccountName: test
   ref:
     tag: v0.0.2
-  url: oci://acrappschipmunk.azurecr.io/podinfo
+  url: oci://749339757188.dkr.ecr.us-west-1.amazonaws.com/test-repo-flux-test-30770

@@ -1,30 +1,86 @@
+#---
+#apiVersion: source.toolkit.fluxcd.io/v1
+#kind: GitRepository
+#metadata:
+#  name: podinfo
+#  namespace: flux-system
+#  labels:
+#    sharding.fluxcd.io/key: shard1
+#spec:
+#  interval: 2m
+#  ref:
+#    branch: master
+#  url: https://github.com/stefanprodan/podinfo
+#---
+#apiVersion: kustomize.toolkit.fluxcd.io/v1
+#kind: Kustomization
+#metadata:
+#  name: podinfo
+#  namespace: default
+#  labels:
+#    sharding.fluxcd.io/key: shard1
+#spec:
+#  interval: 10m
+#  targetNamespace: default
+#  prune: true
+#  sourceRef:
+#    kind: GitRepository
+#    name: podinfo
+#    namespace: flux-system
+#  path: ./kustomize
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: podinfo
+  name: homelab-cluster
   namespace: flux-system
-  labels:
-    sharding.fluxcd.io/key: shard1
 spec:
   interval: 2m
   ref:
-    branch: master
-  url: https://github.com/stefanprodan/podinfo
+    branch: main
+  url: https://github.com/somtochiama/homelab-clusters-fleet
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: podinfo
-  namespace: default
-  labels:
-    sharding.fluxcd.io/key: shard1
+  name: homelab-cluster
+  namespace: flux-system
 spec:
   interval: 10m
-  targetNamespace: default
+  prune: true
+  dependsOn:
+    - name: "homelab-cluster-controllers"
+    - name: "homelab-cluster-certmanager"
+  sourceRef:
+    kind: GitRepository
+    name: homelab-cluster
+    namespace: flux-system
+  path: ./infrastructure/controllers/management
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: homelab-cluster-controllers
+  namespace: flux-system
+spec:
+  interval: 10m
   prune: true
   sourceRef:
     kind: GitRepository
-    name: podinfo
+    name: homelab-cluster
     namespace: flux-system
-  path: ./kustomize
+  path: ./infrastructure/controllers/base
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: homelab-cluster-certmanager
+  namespace: flux-system
+spec:
+  interval: 10m
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: homelab-cluster
+    namespace: flux-system
+  path: ./infrastructure/controllers/base/cert-manager
