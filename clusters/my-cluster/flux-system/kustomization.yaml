@@ -4,18 +4,10 @@ resources:
   - gotk-components.yaml
   - gotk-sync.yaml
 patches:
-  - patch: |
-      apiVersion: source.toolkit.fluxcd.io/v1beta2
-      kind: GitRepository
-      metadata:
-        name: flux-system
-        namespace: flux-system
-      spec:
-          verify:
-            mode: head
-            secretRef:
-              name: flux-gpg-pubkeys
-    target:
-      kind: GitRepository
-      name: flux-system
-      namespace: flux-system
+  - target:
+      kind: Deployment
+      name: my-deployment
+    patch: |-
+      - op: replace
+        path: /spec/template/spec/containers/0/imagePullPolicy
+        value: IfNotPresent
