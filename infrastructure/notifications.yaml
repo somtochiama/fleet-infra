@@ -6,9 +6,8 @@ metadata:
   namespace: flux-system
 spec:
   type: slack
-  address: "https://127.0.0.1:3001"
-  certSecretRef:
-    name: cert-secret
+  secretRef:
+    name: slackx
 ---
 apiVersion: notification.toolkit.fluxcd.io/v1beta1
 kind: Alert
@@ -20,10 +19,10 @@ spec:
     name: slack
   eventSeverity: info
   eventSources:
-    # - kind: GitRepository
-    #   name: '*'
-    # - kind: Bucket
-    #   name: '*'
+    - kind: GitRepository
+      name: '*'
+    - kind: Bucket
+      name: '*'
     - kind: Kustomization
       name: '*'
     - kind: HelmRelease
