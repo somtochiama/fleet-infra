@@ -17,7 +17,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h0m0s
-  path: ./kube-prometheus-stack
+  path: ./monitoring/controllers
   prune: true
   wait: true
   sourceRef:
@@ -33,7 +33,7 @@ spec:
   dependsOn:
   - name: kube-prometheus-stack
   interval: 1h0m0s
-  path: ./monitoring-config
+  path: ./monitoring/config
   prune: true
   wait: true
   sourceRef:
