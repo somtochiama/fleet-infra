@@ -8,19 +8,19 @@ images:
       newName: somma/helm-controller
       newTag: test-stuck-hr4
 patches:
-  - target:
-      version: v1
-      kind: Service
-      name: notification-controller
-      namespace: flux-system
-    patch: |
-      apiVersion: v1
-      kind: Service
-      metadata:
-        name: notification-controller
-        namespace: flux-system
-      spec:
-        type: LoadBalancer
+#  - target:
+#      version: v1
+#      kind: Service
+#      name: notification-controller
+#      namespace: flux-system
+#    patch: |
+#      apiVersion: v1
+#      kind: Service
+#      metadata:
+#        name: notification-controller
+#        namespace: flux-system
+#      spec:
+#        type: LoadBalancer
 #  - patch: |
 #      # Enable drift detection feature
 #      - op: add
@@ -33,22 +33,28 @@ patches:
 #    target:
 #      kind: Deployment
 #      name: helm-controller
-  - patch: |
-      # Enable OOM watch feature
-      - op: add
-        path: /spec/template/spec/containers/0/args/-
-        value: --feature-gates=OOMWatch=true
-      # Threshold at which to trigger a graceful shutdown (optional, default 95%)
-      - op: add
-        path: /spec/template/spec/containers/0/args/-
-        value: --oom-watch-memory-threshold=95
-      # Interval at which to check memory usage (optional, default 500ms)
-      - op: add
-        path: /spec/template/spec/containers/0/args/-
-        value: --oom-watch-interval=500ms
-    target:
+#  - patch: |
+#      # Enable OOM watch feature
+#      - op: add
+#        path: /spec/template/spec/containers/0/args/-
+#        value: --feature-gates=OOMWatch=true
+#      # Threshold at which to trigger a graceful shutdown (optional, default 95%)
+#      - op: add
+#        path: /spec/template/spec/containers/0/args/-
+#        value: --oom-watch-memory-threshold=95
+#      # Interval at which to check memory usage (optional, default 500ms)
+#      - op: add
+#        path: /spec/template/spec/containers/0/args/-
+#        value: --oom-watch-interval=500ms
+#    target:
+#      kind: Deployment
+#      name: helm-controller
+  - target:
       kind: Deployment
-      name: helm-controller
+    patch: |-
+      - op: replace
+        path: /spec/template/spec/containers/0/imagePullPolicy
+        value: IfNotPresent
   - patch: |
       apiVersion: apps/v1
       kind: Deployment
@@ -163,4 +169,3 @@ patches:
 #   - name: ghcr.io/fluxcd/source-controller
 #     newName: somma/source-controller
 #     newTag: digest-a8fc26c
-

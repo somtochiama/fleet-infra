@@ -5,4 +5,4 @@ while IFS= read -r line; do
   kind load docker-image $line
 done <<< "$images"
 export GITHUB_TOKEN=$(cat ~/.config/hub | grep oauth_token | cut -d : -f 2 | tr -d " ")
-flux bootstrap github --owner=somtochiama --token-auth --repository=fleet-infra --personal --path clusters/my-cluster
+flux bootstrap github --owner=somtochiama --token-auth --repository=fleet-infra --personal --path clusters/my-clusters
