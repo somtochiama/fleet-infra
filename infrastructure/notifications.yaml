@@ -2,7 +2,7 @@
 apiVersion: notification.toolkit.fluxcd.io/v1beta1
 kind: Provider
 metadata:
-  name: slackx
+  name: slack
   namespace: flux-system
 spec:
   type: slack
@@ -27,10 +27,10 @@ spec:
       name: '*'
     - kind: HelmRelease
       name: '*'
-    # - kind: HelmChart
-    #   name: '*'
-    # - kind: HelmRepository
-    #   name: '*'
+    - kind: HelmChart
+      name: '*'
+    - kind: HelmRepository
+      name: '*'
     # - kind: ImageRepository
     #   name: '*'
     # - kind: ImagePolicy
