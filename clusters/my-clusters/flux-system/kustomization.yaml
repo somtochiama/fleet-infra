@@ -4,9 +4,9 @@ resources:
 - gotk-components.yaml
 - gotk-sync.yaml
 images:
-    - name: ghcr.io/fluxcd/helm-controller
-      newName: somma/helm-controller
-      newTag: test-stuck-hr4
+    - name: ghcr.io/fluxcd/source-controller
+      newName: somma/source-controller
+      newTag: refactor-events-ec0e7
 patches:
 #  - target:
 #      version: v1
