@@ -6,7 +6,7 @@ resources:
 images:
     - name: ghcr.io/fluxcd/notification-controller
       newName: somma/notification-controller
-      newTag: refactor-events-ec0e7
+      newTag: refactor-events-d194886
 patches:
 #  - target:
 #      version: v1
@@ -49,29 +49,29 @@ patches:
 #    target:
 #      kind: Deployment
 #      name: helm-controller
-  - target:
-      kind: Deployment
-    patch: |-
-      - op: replace
-        path: /spec/template/spec/containers/0/imagePullPolicy
-        value: IfNotPresent
-  - patch: |
-      apiVersion: apps/v1
-      kind: Deployment
-      metadata:
-        name: all
-      spec:
-        template:
-          spec:
-            containers:
-              - name: manager
-                resources:
-                  limits:
-                    cpu: 4000m
-                    memory: 4Gi
-    target:
-      kind: Deployment
-      name: "(helm-controller|source-controller)"
+#  - target:
+#      kind: Deployment
+#    patch: |-
+#      - op: replace
+#        path: /spec/template/spec/containers/0/imagePullPolicy
+#        value: IfNotPresent
+#  - patch: |
+#      apiVersion: apps/v1
+#      kind: Deployment
+#      metadata:
+#        name: all
+#      spec:
+#        template:
+#          spec:
+#            containers:
+#              - name: manager
+#                resources:
+#                  limits:
+#                    cpu: 4000m
+#                    memory: 4Gi
+#    target:
+#      kind: Deployment
+#      name: "(helm-controller|source-controller)"
 #  - patch: |
 #      - op: add
 #        path: /spec/template/spec/containers/0/env/-
