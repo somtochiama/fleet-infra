@@ -33,7 +33,7 @@ spec:
   dependsOn:
   - name: kube-prometheus-stack
   interval: 1h0m0s
-  path: ./monitoring/config
+  path: ./monitoring/configs
   prune: true
   wait: true
   sourceRef:
