@@ -32,3 +32,25 @@ spec:
   url: oci://749339757188.dkr.ecr.us-east-1.amazonaws.com
   secretRef:
     name: docker-config
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: failing-oci
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      interval: 1m0s
+      chart: test
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: failing-oci
+      #        namespace: default
+      version: '1.26.0'
+  interval: 1h
+  values:
+    resource:
+      limit:
+        memory: 1Gi
