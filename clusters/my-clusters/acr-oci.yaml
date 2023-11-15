@@ -24,7 +24,7 @@ spec:
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: failing-oci
+  name: failing-oci2
   namespace: flux-system
 spec:
   interval: 1m0s
@@ -46,7 +46,7 @@ spec:
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
-        name: failing-oci
+        name: failing-oci2
       #        namespace: default
       version: '1.26.0'
   interval: 1h
