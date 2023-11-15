@@ -10,3 +10,25 @@ spec:
   ref:
     tag: 6.1.6
   url: oci://ghcr.io/stefanprodan/manifests/podinfo
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: podinfo
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  type: oci
+  url: oci://ghcr.io/stefanprodan/charts/podinfo
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: failing-oci
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  type: oci
+  url: oci://749339757188.dkr.ecr.us-east-1.amazonaws.com
+  secretRef:
+    name: docker-config
