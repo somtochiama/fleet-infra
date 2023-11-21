@@ -2,15 +2,29 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: OCIRepository
 metadata:
-  name: podinfo
-  namespace: kube-system
+  name: podinfo-oci
+  namespace: flux-system
 spec:
   interval: 10m0s
-  provider: aws
-#  serviceAccountName: test
+  #  provider: azure
   ref:
-    tag: test-chmod-works
+    tag: test-static-push
   url: oci://ghcr.io/somtochiama/charts/podinfo
-  layerSelector:
-    mediaType: "application/vnd.cncf.flux.content.v1.yml"
-    operation: copy
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: podinfo-oci
+  namespace: flux-system
+spec:
+  interval: 1h
+  path: ./
+  prune: true
+  sourceRef:
+    kind: OCIRepository
+    name: podinfo-oci
+  targetNamespace: default
+---
+#  layerSelector:
+#    mediaType: "application/vnd.cncf.flux.content.v1.yml"
+#    operation: copy
