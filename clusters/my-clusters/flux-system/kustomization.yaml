@@ -24,19 +24,19 @@ patches:
         namespace: flux-system
       spec:
         url: https://github.com/somtochiama/fleet-infra.git
-  - target:
-      version: v1
-      kind: Kustomization
-      name: flux-system
-      namespace: flux-system
-    patch: |
-      apiVersion: kustomize.toolkit.fluxcd.io/v1
-      kind: Kustomization
-      metadata:
-        name: flux-system
-        namespace: flux-system
-      spec:
-        path: ./clusters/my-clusterx
+#  - target:
+#      version: v1
+#      kind: Kustomization
+#      name: flux-system
+#      namespace: flux-system
+#    patch: |
+#      apiVersion: kustomize.toolkit.fluxcd.io/v1
+#      kind: Kustomization
+#      metadata:
+#        name: flux-system
+#        namespace: flux-system
+#      spec:
+#        path: ./clusters/my-clusters
 #  - target:
 #      version: v1
 #      kind: Service
