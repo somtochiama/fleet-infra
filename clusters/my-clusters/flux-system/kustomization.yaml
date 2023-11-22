@@ -23,7 +23,7 @@ patches:
         name: flux-system
         namespace: flux-system
       spec:
-        url: https://github.com/somtochiama/fleet-infra.git
+        url: https://github.xcom/somtochiama/fleet-infra.git
 #  - target:
 #      version: v1
 #      kind: Kustomization
