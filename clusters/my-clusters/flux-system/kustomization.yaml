@@ -10,20 +10,20 @@ images:
     - name: ghcr.io/fluxcd/source-controller
       newName: somma/source-controller
       newTag: helmrepo-oci-static
-#patches:
-#  - target:
-#      version: v1
-#      kind: GitRepository
-#      name: flux-system
-#      namespace: flux-system
-#    patch: |
-#      apiVersion: source.toolkit.fluxcd.io/v1
-#      kind: GitRepository
-#      metadata:
-#        name: flux-system
-#        namespace: flux-system
-#      spec:
-#        url: https://github.xcom/somtochiama/fleet-infra.git
+patches:
+  - target:
+      version: v1
+      kind: GitRepository
+      name: flux-system
+      namespace: flux-system
+    patch: |
+      apiVersion: source.toolkit.fluxcd.io/v1
+      kind: GitRepository
+      metadata:
+        name: flux-system
+        namespace: flux-system
+      spec:
+        url: https://github.xcom/somtochiama/fleet-infra.git
 #  - target:
 #      version: v1
 #      kind: Kustomization
