@@ -1,0 +1,40 @@
+apiVersion: v1
+data:
+    token: ENC[AES256_GCM,data:tAT6K4Lcw9SlTTB5H/mJuPqlTtbj4US9zpn46Xi80SjuWdJqDAEs1EnrsRw=,iv:WqvPDocSKc09Drv5mFP8dFcWUekTnLbZHruEwTnQOFE=,tag:hPPZAFbQjsxcGOkd9UNA5g==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: null
+    name: basic-auth
+    namespace: default
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-12-05T11:50:31Z"
+    mac: ENC[AES256_GCM,data:otpYe7WVEWx5Y2WyO4x1n0GlOTd+ysgk17f06+B6yBF7xONgqfpl6WKolQVhWCxBdk0rweWoMDHuLfNjAN20v6vstiADLmyX+/JTn15ykblrgt1f59fEhskp8IoXhp9a6cZy1NWgdWVcgcMWHVr4/oZq3MOkMJiZCQR/bGP4/3M=,iv:ZqYNWKMcMHkLy5WDoQhz++JlJf5dD5ohZ+j3qM7iQUQ=,tag:69q+xEPBUyon0W7u4VwVzw==,type:str]
+    pgp:
+        - created_at: "2023-12-05T11:50:31Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA6teRIdVQHFUAQ//WKn26vRwzoIKNCE94p6ROxdgW0AkdThpzBf/wzJcUCHJ
+            sn8YVmz5/rqKOiFnoRKZvci5tJgA4ElWLMnCTtLi1fpaOxM7XiFh6Yj3AEqF2EnY
+            M04ftIB7mixRPm0gvm8BQfwYH4R0c3cDm2VguLQokLItlFU/fS9gIL/kU6gNiQae
+            kOxVtmLFPufO5PjhpuwTEGr4D1PT1OWK95cO+chSj6MXFuAmbsO7ZlgFwXKGn3RB
+            ItbBZXD5R87MMZv//Xd31HH0UHG1OgMsRpnmCkHkpnEZ2b3+Tp6aKQscabgtPkLd
+            1PYsIALY3eXvD4lCiwFm8kxojUmKE5rtJylbVOnH1HaoMTUIkVduLyZn9XDYpZlF
+            leb1lVjVX2IQH9tMGrNGUSsd0QaQgDUWjeqyCxYsF1lBNVzqOkzd6HO5AOqSGNBX
+            LgrrVSW4K/OHf0erNWiGjyt3D03+kTd02X061EDQpYZ59rHO5toBDuQq20X96M+H
+            2MIk+a1CZJ+OeK2K36TlKHM9CbUj/gYCNx+oaVc7DvMfvKHrXLz6NsFdY/ffV2QX
+            5U2fvKRh8fvh4ZSwm2oeYCK/qVZDBYTmJf4qgPOTSRPhtttrI3997ffepg71YbGG
+            N1KOm9owS7SoWu7ln37FtwJuKNYrziRDWZD1/hgqgSBdEMa3ex+SxAjxUyC7Gn/U
+            aAEJAhDPlFy1oHPopyVHRHi5V3ZKqvui5GG6m1+qTJkbA8cAcOIwSCGaHRD8i5sX
+            NdKzaNKx40hgSXH8uqmS8McJfXF8qxuwfrbOLj9VQfw0Atr8XHPXaAf9MIjUJi7z
+            lvsUZl3RwTUl
+            =24HW
+            -----END PGP MESSAGE-----
+          fp: 1044ACACE037AC586D79AFC093F013689C4CAD2C
+    encrypted_regex: ^(data|stringData)$
+    version: 3.8.1
