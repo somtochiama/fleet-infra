@@ -17,19 +17,19 @@ patches:
       - op: replace
         path: /spec/template/spec/containers/0/imagePullPolicy
         value: IfNotPresent
-#  - target:
-#      version: v1
-#      kind: GitRepository
-#      name: flux-system
-#      namespace: flux-system
-#    patch: |
-#      apiVersion: source.toolkit.fluxcd.io/v1
-#      kind: GitRepository
-#      metadata:
-#        name: flux-system
-#        namespace: flux-system
-#      spec:
-#        url: https://github.xcom/somtochiama/fleet-infra.git
+  - target:
+      version: v1
+      kind: GitRepository
+      name: flux-system
+      namespace: flux-system
+    patch: |
+      apiVersion: source.toolkit.fluxcd.io/v1
+      kind: GitRepository
+      metadata:
+        name: flux-system
+        namespace: flux-system
+      spec:
+        url: https://github.xcom/somtochiama/fleet-infra.git
   - target:
       version: v1
       kind: Kustomization
